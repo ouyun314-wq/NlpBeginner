@@ -1,0 +1,208 @@
+============================================================
+综合对比实验：N-gram × 批次策略 × 学习率
+============================================================
+============================================================
+综合对比实验：N-gram × 批次策略 × 学习率
+统一训练 100 个epoch（完整遍历数据集次数）
+============================================================
+
+============================================================
+[1-gram] 特征数=3737, 样本数=15278
+============================================================
+
+  [Shuffle_SGD]
+    lr=0.01: train=0.6740, test=0.4845, time=171.9s
+    lr=0.05: train=0.7406, test=0.5000, time=211.8s
+    lr=0.1: train=0.7377, test=0.5373, time=238.8s
+    lr=0.2: train=0.7249, test=0.4938, time=242.9s
+    保存: result/1-gram_Shuffle_SGD.png
+
+  [Shuffle_16]
+    lr=0.05: train=0.5456, test=0.4783, time=68.2s
+    lr=0.1: train=0.6234, test=0.4596, time=67.5s
+    lr=0.2: train=0.6939, test=0.5124, time=66.4s
+    lr=0.5: train=0.7292, test=0.5217, time=66.2s
+    保存: result/1-gram_Shuffle_16.png
+
+  [Shuffle_32]
+    lr=0.1: train=0.5543, test=0.4441, time=65.8s
+    lr=0.2: train=0.6323, test=0.4752, time=63.7s
+    lr=0.5: train=0.7100, test=0.5280, time=64.5s
+    lr=1: train=0.7328, test=0.5093, time=64.5s
+    保存: result/1-gram_Shuffle_32.png
+
+  [Shuffle_64]
+    lr=0.2: train=0.5454, test=0.4534, time=89.3s
+    lr=0.5: train=0.6458, test=0.5031, time=89.1s
+    lr=1: train=0.7067, test=0.5124, time=89.1s
+    lr=5: train=0.7357, test=0.5280, time=88.8s
+    保存: result/1-gram_Shuffle_64.png
+
+  [Sequential_1]
+    lr=0.01: train=0.6723, test=0.5155, time=313.8s
+    lr=0.05: train=0.7437, test=0.5217, time=311.3s
+    lr=0.1: train=0.7417, test=0.5062, time=314.3s
+    lr=0.2: train=0.7309, test=0.5186, time=317.8s
+    保存: result/1-gram_Sequential_1.png
+
+  [Sequential_16]
+    lr=0.05: train=0.5490, test=0.4534, time=56.6s
+    lr=0.1: train=0.6271, test=0.4876, time=56.5s
+    lr=0.2: train=0.6977, test=0.5217, time=55.1s
+    lr=0.5: train=0.7364, test=0.5186, time=55.7s
+    保存: result/1-gram_Sequential_16.png
+
+  [Sequential_32]
+    lr=0.1: train=0.5459, test=0.4472, time=48.3s
+    lr=0.2: train=0.6249, test=0.5186, time=47.8s
+    lr=0.5: train=0.7108, test=0.5031, time=47.9s
+    lr=1: train=0.7385, test=0.5280, time=47.7s
+    保存: result/1-gram_Sequential_32.png
+
+  [Sequential_64]
+    lr=0.2: train=0.5450, test=0.4503, time=84.9s
+    lr=0.5: train=0.6531, test=0.5280, time=84.0s
+    lr=1: train=0.7108, test=0.5280, time=84.1s
+    lr=5: train=0.7275, test=0.5280, time=84.8s
+    保存: result/1-gram_Sequential_64.png
+
+  [1-gram] 最佳配置: Shuffle_SGD, lr=0.1, acc=0.5373
+
+============================================================
+[(1,2)-gram] 特征数=13553, 样本数=15278
+============================================================
+
+  [Shuffle_SGD]
+    lr=0.01: train=0.7752, test=0.5217, time=872.8s
+    lr=0.05: train=0.9606, test=0.5466, time=500.5s
+    lr=0.1: train=0.9745, test=0.5528, time=942.5s
+    lr=0.2: train=0.9776, test=0.5590, time=601.7s
+    保存: result/(1,2)-gram_Shuffle_SGD.png
+
+  [Shuffle_16]
+    lr=0.05: train=0.5993, test=0.4658, time=496.8s
+    lr=0.1: train=0.7043, test=0.5124, time=447.1s
+    lr=0.2: train=0.8098, test=0.4938, time=450.2s
+    lr=0.5: train=0.9319, test=0.5248, time=514.1s
+    保存: result/(1,2)-gram_Shuffle_16.png
+
+  [Shuffle_32]
+    lr=0.1: train=0.5982, test=0.4410, time=382.8s
+    lr=0.2: train=0.6964, test=0.4783, time=349.4s
+    lr=0.5: train=0.8445, test=0.5093, time=364.3s
+    lr=1: train=0.9313, test=0.5714, time=375.5s
+    保存: result/(1,2)-gram_Shuffle_32.png
+
+  [Shuffle_64]
+    lr=0.2: train=0.5949, test=0.4658, time=315.2s
+    lr=0.5: train=0.7326, test=0.5280, time=306.6s
+    lr=1: train=0.8449, test=0.5373, time=336.5s
+    lr=5: train=0.9712, test=0.5280, time=323.7s
+    保存: result/(1,2)-gram_Shuffle_64.png
+
+  [Sequential_1]
+    lr=0.01: train=0.7790, test=0.4969, time=866.4s
+    lr=0.05: train=0.9749, test=0.5373, time=924.4s
+    lr=0.1: train=0.9814, test=0.5248, time=929.1s
+    lr=0.2: train=0.9820, test=0.5342, time=924.8s
+    保存: result/(1,2)-gram_Sequential_1.png
+
+  [Sequential_16]
+    lr=0.05: train=0.5928, test=0.4720, time=418.5s
+    lr=0.1: train=0.7032, test=0.5155, time=419.8s
+    lr=0.2: train=0.8161, test=0.5404, time=420.8s
+    lr=0.5: train=0.9429, test=0.5342, time=420.4s
+    保存: result/(1,2)-gram_Sequential_16.png
+
+  [Sequential_32]
+    lr=0.1: train=0.6009, test=0.4907, time=394.3s
+    lr=0.2: train=0.6990, test=0.5217, time=390.9s
+    lr=0.5: train=0.8548, test=0.4907, time=394.4s
+    lr=1: train=0.9391, test=0.5559, time=387.6s
+    保存: result/(1,2)-gram_Sequential_32.png
+
+  [Sequential_64]
+    lr=0.2: train=0.5945, test=0.4783, time=362.1s
+    lr=0.5: train=0.7384, test=0.5186, time=372.5s
+    lr=1: train=0.8561, test=0.5186, time=357.8s
+    lr=5: train=0.9608, test=0.5528, time=352.6s
+    保存: result/(1,2)-gram_Sequential_64.png
+
+  [(1,2)-gram] 最佳配置: Shuffle_32, lr=1, acc=0.5714
+
+============================================================
+[(1,2,3)-gram] 特征数=24805, 样本数=15278
+============================================================
+
+  [Shuffle_SGD]
+    lr=0.01: train=0.8210, test=0.5124, time=1205.8s
+    lr=0.05: train=0.9931, test=0.5497, time=1062.0s
+    lr=0.1: train=0.9977, test=0.5590, time=1058.1s
+    lr=0.2: train=0.9990, test=0.5776, time=1067.4s
+    保存: result/(1,2,3)-gram_Shuffle_SGD.png
+
+  [Shuffle_16]
+    lr=0.05: train=0.6222, test=0.4534, time=604.8s
+    lr=0.1: train=0.7449, test=0.5155, time=602.0s
+    lr=0.2: train=0.8627, test=0.5435, time=603.6s
+    lr=0.5: train=0.9771, test=0.5466, time=603.3s
+    保存: result/(1,2,3)-gram_Shuffle_16.png
+
+  [Shuffle_32]
+    lr=0.1: train=0.6246, test=0.4503, time=587.0s
+    lr=0.2: train=0.7453, test=0.4845, time=591.5s
+    lr=0.5: train=0.8963, test=0.5062, time=595.3s
+    lr=1: train=0.9757, test=0.5714, time=591.3s
+    保存: result/(1,2,3)-gram_Shuffle_32.png
+
+  [Shuffle_64]
+    lr=0.2: train=0.6131, test=0.4348, time=571.8s
+    lr=0.5: train=0.7815, test=0.5248, time=573.9s
+    lr=1: train=0.8984, test=0.5248, time=570.5s
+    lr=5: train=0.9974, test=0.5435, time=573.2s
+    保存: result/(1,2,3)-gram_Shuffle_64.png
+
+  [Sequential_1]
+    lr=0.01: train=0.8334, test=0.5217, time=1578.0s
+    lr=0.05: train=0.9962, test=0.5683, time=1575.6s
+    lr=0.1: train=0.9989, test=0.5559, time=1579.2s
+    lr=0.2: train=0.9991, test=0.5807, time=1574.4s
+    保存: result/(1,2,3)-gram_Sequential_1.png
+
+  [Sequential_16]
+    lr=0.05: train=0.6223, test=0.4348, time=759.2s
+    lr=0.1: train=0.7468, test=0.5217, time=760.4s
+    lr=0.2: train=0.8718, test=0.5217, time=764.3s
+    lr=0.5: train=0.9812, test=0.5404, time=761.4s
+    保存: result/(1,2,3)-gram_Sequential_16.png
+
+  [Sequential_32]
+    lr=0.1: train=0.6255, test=0.4348, time=723.9s
+    lr=0.2: train=0.7477, test=0.4689, time=722.0s
+    lr=0.5: train=0.9068, test=0.4969, time=791.5s
+    lr=1: train=0.9779, test=0.5652, time=710.9s
+    保存: result/(1,2,3)-gram_Sequential_32.png
+
+  [Sequential_64]
+    lr=0.2: train=0.6227, test=0.4689, time=668.6s
+    lr=0.5: train=0.7813, test=0.5093, time=670.5s
+    lr=1: train=0.9094, test=0.5311, time=671.2s
+    lr=5: train=0.9909, test=0.5776, time=670.2s
+    保存: result/(1,2,3)-gram_Sequential_64.png
+
+  [(1,2,3)-gram] 最佳配置: Sequential_1, lr=0.2, acc=0.5807
+
+绘制汇总图: Shuffle vs Sequential...
+  保存: result/summary_shuffle_vs_sequential.png
+
+绘制汇总图: N-gram Best...
+  保存: result/summary_ngram_best.png
+
+绘制汇总图: Heatmap...
+  保存: result/summary_heatmap.png
+
+============================================================
+实验完成！结果保存在: result
+============================================================
+
+Process finished with exit code 0
